@@ -6,9 +6,9 @@ export default function Radio({ label, options, selected, onChange}){
   <fieldset>
     <label>{label}</label>
     {options.map(option => (
-      <div>
+      <div key={option}>
         <label>{option}</label>
-        <input key={option} type="radio" value={option} checked={selected === option} onChange={onChange}/>
+        <input type="radio" value={option} checked={selected === option} onChange={onChange}/>
       </div>
     ))}
   </fieldset>

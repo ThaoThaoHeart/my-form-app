@@ -9,6 +9,7 @@ export function FormProvider({ children }) {
     gender: "",
     hobbies: [],
     birthdate: "",
+    description: "",
   })
 
   return (
