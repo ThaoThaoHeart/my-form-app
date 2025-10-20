@@ -1,4 +1,5 @@
 "use client";
+import Checkbox from "../fields/Checkbox";
 import TextArea from "../fields/TextArea";
 import { useFormData } from "../FormContext";
 import { useRouter } from "next/navigation";
@@ -23,18 +24,11 @@ export default function Step1() {
       <h1>Step 2</h1>
 
       <fieldset>
-        <legend>Hobbies:</legend>
-        {["Reading", "Sports", "Music"].map(hobby => (
-          <label key={hobby}>
-            <input 
-              type="checkbox"
-              checked={formData.hobbies?.includes(hobby) || false}
-              onChange={() => toggleHobby(hobby)}
-            />
-            {hobby}
-          </label>
-        ))}
-
+        <Checkbox 
+          label="Hobbies"
+          options={["Reading", "Sports", "Music"]}
+          selected={formData.hobbies}
+          onChange={toggleHobby}/>
         <TextArea 
           label="Describe yourself"
           value={formData.description}
